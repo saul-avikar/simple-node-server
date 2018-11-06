@@ -42,6 +42,9 @@ const port = 80;
 const approveDomains = (opts, certs, cb) => {
 	if (certs) {
 		opts.domains = certs.altnames;
+	} else {
+		opts.email = emailSettings.to;
+		opts.agreeTos = true;
 	}
 
 	cb(null, { options: opts, certs: certs });
@@ -49,7 +52,8 @@ const approveDomains = (opts, certs, cb) => {
 
 const lex = greenlock.create({
 	// set to https://acme-v01.api.letsencrypt.org/directory in production
-	server: "staging",
+	version: "v02",
+	server: "https://acme-staging.api.letsencrypt.org/directory",
 	challenges: { "http-01": require("le-challenge-fs").create({ webrootPath: "/tmp/acme-challenges" }) },
 	store: require("le-store-certbot").create({ webrootPath: "/tmp/acme-challenges" }),
 	approveDomains: approveDomains
