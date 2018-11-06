@@ -1,0 +1,28 @@
+{
+  "name": "simple-node-server",
+  "version": "1.0.0",
+  "description": "A simple node server to serve files over SSL and handle emails.",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "greenlock-express": "^2.4.9",
+    "nodemailer": "^4.6.8",
+    "path": "^0.12.7",
+    "recaptcha2": "^1.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "server": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saul-avikar/simple-node-server.git"
+  },
+  "author": "Saul Boyd <saul@avikar.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saul-avikar/simple-node-server/issues"
+  },
+  "homepage": "https://github.com/saul-avikar/simple-node-server#readme"
+}
